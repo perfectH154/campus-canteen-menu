@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f2efe6">
+    <meta name="description" content="闵行校区第一餐饮大楼菜品与价格索引。">
+    <title>第一餐饮大楼 · 菜单索引</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' fill='%23a64031'/%3E%3Cpath d='M14 13h20v4H18v5h14v4H18v5h16v4H14z' fill='%23f2efe6'/%3E%3C/svg%3E">
+    <link rel="stylesheet" href="assets/styles.css">
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="topbar">
+        <a class="brand" href="#top" aria-label="食堂指南，返回首页">
+          <span class="brand-mark" aria-hidden="true">食</span>
+          <span class="brand-name">食堂指南<span>闵行校区 / DINING INDEX</span></span>
+        </a>
+        <div class="topbar-note"><span class="status-dot"></span> 第一餐饮大楼 <span class="slash">/</span> 菜单检索</div>
+      </header>
+
+      <main id="top">
+        <section class="intro" aria-labelledby="page-title">
+          <div class="intro-copy">
+            <div class="eyebrow"><span>01</span> 闵行校区 · 第一餐饮大楼</div>
+            <h1 id="page-title">菜单索引</h1>
+            <p>按菜名、档口或分类查找。价格按清单展示，具体以现场为准。</p>
+          </div>
+          <div class="intro-mark" aria-hidden="true"><span>MENU</span><strong>食</strong><i>01 / 24</i></div>
+        </section>
+
+        <section class="metrics" aria-label="菜品清单概况">
+          <div><strong id="stat-items">—</strong><span>道菜品</span></div>
+          <div><strong id="stat-prices">—</strong><span>条数字价格</span></div>
+          <div><strong id="stat-merchants">—</strong><span>个餐饮品牌</span></div>
+          <div class="metric-note"><span class="note-rule"></span><span>来源未注明清单发布日期</span></div>
+        </section>
+
+        <section class="search-section" aria-label="查找菜品">
+          <label class="searchbox" for="search-input">
+            <span class="search-icon" aria-hidden="true"></span>
+            <input id="search-input" type="search" autocomplete="off" placeholder="搜索菜名、档口或分类" aria-label="搜索菜名、档口或分类">
+            <kbd>⌘ K</kbd>
+          </label>
+          <div class="search-hint">快捷查找 <span>按名称 / 餐饮品牌 / 档口 / 分类</span></div>
+        </section>
+
+        <div class="catalog-layout">
+          <aside class="filters" aria-label="筛选菜单">
+            <div class="filter-block">
+              <h2>餐饮品牌 <span>01</span></h2>
+              <div id="merchant-filters" class="filter-list" role="group" aria-label="按餐饮品牌筛选"></div>
+            </div>
+            <div class="filter-block">
+              <label class="filter-heading" for="category-filter">分类 <span>02</span></label>
+              <select id="category-filter" class="select-control" aria-label="按菜品分类筛选">
+                <option value="">全部分类</option>
+              </select>
+            </div>
+            <div class="filter-block">
+              <h2>供应时段 <span>03</span></h2>
+              <div id="meal-filters" class="tag-chip-list meal-chip-list" role="group" aria-label="按供应时段筛选"></div>
+              <p class="tag-explainer">按原表工作表标注；其余时段待确认。</p>
+            </div>
+            <div class="filter-block">
+              <h2>价格状态 <span>04</span></h2>
+              <div class="filter-list" role="group" aria-label="按价格状态筛选">
+                <button class="filter-button is-active" type="button" data-price-mode="all">全部</button>
+                <button class="filter-button" type="button" data-price-mode="priced">有数字价格</button>
+                <button class="filter-button" type="button" data-price-mode="check">需要核对</button>
+              </div>
+            </div>
+            <div class="filter-block tag-filter-block">
+              <h2>口味标签 <span>05</span></h2>
+              <div id="taste-filters" class="tag-chip-list" role="group" aria-label="按口味标签筛选"></div>
+              <p class="tag-explainer">按菜名明确词项初标；无依据时保留待判断。</p>
+            </div>
+            <div class="filter-block tag-filter-block">
+              <h2>形式标签 <span>06</span></h2>
+              <div id="form-filters" class="tag-chip-list form-chip-list" role="group" aria-label="按菜品形式筛选"></div>
+              <p class="tag-explainer">跨组同时筛选；同组多选满足其一。</p>
+            </div>
+            <div class="filter-divider"></div>
+            <button id="favorites-toggle" class="favorites-toggle" type="button" aria-pressed="false">
+              <span class="star-icon" aria-hidden="true">☆</span>
+              <span>我的收藏</span>
+              <span class="favorite-count" id="favorite-count">0</span>
+            </button>
+            <p class="local-note">收藏只保存在当前设备</p>
+            <div class="data-quality">
+              <span class="quality-label">价格资料</span>
+              <p><strong id="quality-missing">—</strong> 条未填写</p>
+              <p><strong id="quality-labels">—</strong> 条文字标记</p>
+              <p><strong id="quality-zero">—</strong> 条原表为 0，待核实</p>
+            </div>
+          </aside>
+
+          <section class="results" aria-labelledby="results-title">
+            <div class="results-header">
+              <div>
+                <div class="eyebrow results-eyebrow">DISHES <span>/</span> 菜品目录</div>
+                <h2 id="results-title">全部菜品 <span id="result-count">—</span></h2>
+              </div>
+              <label class="sort-control">排序
+                <select id="sort-filter" aria-label="菜品排序">
+                  <option value="source">清单顺序</option>
+                  <option value="name">菜名 A–Z</option>
+                  <option value="price">价格从低到高</option>
+                </select>
+              </label>
+            </div>
+            <div class="price-legend" aria-live="polite">
+              <span><i class="legend-dot dot-price"></i>数字价格来自原表</span>
+              <span><i class="legend-dot dot-check"></i>缺价 / 文字标记 / 零价需确认</span>
+            </div>
+            <div id="loading-state" class="loading-state">正在载入菜品清单…</div>
+            <ul id="menu-list" class="menu-list" aria-live="polite"></ul>
+            <div id="empty-state" class="empty-state" hidden>
+              <span class="empty-no">∅</span>
+              <h3>没有找到匹配的菜品</h3>
+              <p>试试缩短关键词，或清除部分筛选条件。</p>
+              <button id="clear-filters" type="button" class="text-button">清除筛选</button>
+            </div>
+            <button id="load-more" class="load-more" type="button" hidden>显示更多菜品 <span>↓</span></button>
+            <div class="results-footer"><span>价格和菜品以档口实际供应为准</span><span id="shown-count"></span></div>
+          </section>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div><span class="brand-mark footer-mark" aria-hidden="true">食</span><span>食堂指南 <small>MENU INDEX</small></span></div>
+        <p>菜品图片为示意图；时段按原表工作表归类，不代表档口营业时间或当日供应状态。</p>
+        <a href="#top">回到顶部 ↑</a>
+      </footer>
+    </div>
+    <script src="assets/app.js" defer></script>
+  </body>
+</html>
